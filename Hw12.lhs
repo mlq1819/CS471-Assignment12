@@ -27,7 +27,7 @@ Example:
 Problem 1 Answer:
 
  > sumALL :: Num a => [a] -> a
-
+ > sumALL a = if length a < 1 then 0 else head a + sumAll (tail a)
 
 Problem 2:
 
