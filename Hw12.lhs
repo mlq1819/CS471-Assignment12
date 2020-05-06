@@ -210,7 +210,7 @@ Answer 8:
 
 > sumHarmonic :: (Eq a, Fractional a) => a -> a
 > sumHarmonic i
->    | i < 1      = 1
+>    | i == 1     = 1
 >    | otherwise  = (1/i) + (sumHarmonic (i-1))
 
 
