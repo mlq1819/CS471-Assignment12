@@ -90,7 +90,7 @@ Problem 4 Answer:
 
 > composeList :: (Num a) => [(a -> a)] -> a -> a
 > composeList lst v
->    | length lst == 0   = return v
+>    | length lst == 0   = v
 >    | otherwise         = (head lst) (composeList (tail lst) v)
 
 Problem 5:
