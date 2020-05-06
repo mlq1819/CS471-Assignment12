@@ -70,5 +70,15 @@ b.vii) (.) (+) (\m -> 10 * m) 3
 	After checking, my answer was accurate.
 
 3. Custom data types
-a) Custom type are allowed. There is some text to read and understand. The question itself: what is the data type name? What is the constructor name? What happens if you do not use deriving in the type declaration when trying to find if two points are equal?
+a) Custom types are allowed. There is some text to read and understand. 
+
+> data Point a = Pt a a  deriving (Show, Eq)
+
+The question itself: what is the data type name? What is the constructor name? What happens if you do not use deriving in the type declaration when trying to find if two points are equal?
+	The data type name is Point, and the constructor name is Pt. If "deriving" is not used in the type declaration when trying to determine equality between two points, there is a reasonable chance that the equality will fail even when it shouldn't due to type mismatching.
 	
+b) Write a function "inside r point" which returns true if the point lies inside the circle centered on the origin with radius r.
+
+> inside :: (Ord a, Num a) => a -> Point a -> Bool
+> inside r p = if p == Pt x y then (x * x) + (y * y) <= (r * r) else 0
+
