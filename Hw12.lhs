@@ -41,8 +41,11 @@ Example:
 
 Problem 2 Answer:
 
-  > binOpALL :: Num a => (a -> a -> a) -> [a] -> a
-
+> binOpALL :: Num a => (a -> a -> a) -> [a] -> a
+> binOpALL o a
+>    | length a < 1    = 0
+>    | length a == 1   = head a
+>    | length a > 1    = o (head a) (binOpALL (tail a))
 
 Problem 3:
 Write a recursive function "insertAt v p lst" that inserts a value v at
