@@ -70,7 +70,7 @@ Problem 3 Answer:
 >    | p < 0            = error "neg p"
 >    | p == 0           = v : lst
 >    | length lst == 0  = [v]
->    | p > 0            = (head lst) : (insertAt v (p-1) (tail lst))
+>    | otherwise        = (head lst) : (insertAt v (p-1) (tail lst))
 
 
 Problem 4. Thompson 10.3
@@ -88,6 +88,10 @@ is the function f(x) = (3 - (2 * (5 + x))).
 
 Problem 4 Answer:
 
+> composeList :: (Num a) => [(a -> a)] -> a -> a
+> composeList lst v
+>    | length lst == 0   = return v
+>    | otherwise         = (head lst) (composeList (tail lst) v)
 
 Problem 5:
 In homework 1 you were introduced to the Ackermann Numbers.
