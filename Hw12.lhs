@@ -70,7 +70,7 @@ Problem 3 Answer:
 >    | p < 0            = error "neg p"
 >    | p == 0           = v : lst
 >    | length lst == 0  = [v]
->    | p > 0            = (head lst) : (insertAt v (p-1) (tail list))
+>    | p > 0            = (head lst) : (insertAt v (p-1) (tail lst))
 
 
 Problem 4. Thompson 10.3
