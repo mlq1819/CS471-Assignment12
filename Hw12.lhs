@@ -187,7 +187,7 @@ Answer 7:
    
 > flatten :: Tree t -> [t]
 > flatten Nil = []
-> flatten (Node a (b) (c)) = (flatten b) + [a] + (flatten c)
+> flatten (Node a (b) (c)) = (flatten b) ++ [a] ++ (flatten c)
 
 Problem 8:
 The harmonic series is the following infinite series:
