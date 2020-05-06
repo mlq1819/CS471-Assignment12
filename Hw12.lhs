@@ -110,7 +110,7 @@ Example:
 
 Problem 5 Answer:
 
-> ack :: (Num a) => a -> a -> a
+> ack :: (Ord a, Num a) => a -> a -> a
 > ack m n
 >    | m == 0           = (n + 1)
 >    | n == 0 && m > 0  = (ack (m-1) 1)
