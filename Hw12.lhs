@@ -280,10 +280,10 @@ Problem 10 Answer:
 
 > replicate' :: (Eq a, Num a) => [a] -> [a]
 > replicate' lst
->    | length lst == 0                   = []
->    | length lst == 1 && head lst == 0  = (tail lst)
->    | length lst == 1                   = (head lst) : map ((+) 1) (replicate' [(head lst) - 1])
->    | otherwise                         = (replicate' [head lst]) ++ (replicate' (tail lst))
+>    | length lst == 0  = []
+>    | head lst == 0    = replicate' (tail lst)
+>    | length lst == 1  = (head lst) : map ((+) 1) (replicate' [(head lst) - 1])
+>    | otherwise        = (replicate' [head lst]) ++ (replicate' (tail lst))
 
 r[0,1,2,3,4]
 r[0] r[1,2,3,4]
