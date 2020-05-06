@@ -208,7 +208,10 @@ Example:
 
 Answer 8:
 
-      > sumHarmonic :: (Eq a, Fractional a) => a -> a
+> sumHarmonic :: (Eq a, Fractional a) => a -> a
+> sumHarmonic i
+>    | i < 1      = 1
+>    | otherwise  = (1/i) + (sumHarmonic (i-1))
 
 
 Problem 9: (from http://en.wikipedia.org/wiki/Thue%E2%80%93Morse_sequence )
