@@ -262,7 +262,7 @@ Note: you may have a slightly different type depending on your solution.
 > thue :: (Eq a, Num a) => [a] -> [a]
 > thue n
 >    | length n == 0  = []	
->    | otherwise      = (head n) : (thue (tail n)) ++ [1 - head n]
+>    | otherwise      = (head n) : ((1 - head n) : (thue (tail n)))
 
 Problem 10:
 Define a function replicate' which given a list of numbers returns a 
