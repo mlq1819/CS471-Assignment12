@@ -142,7 +142,7 @@ Note: you may have a slightly different type depending on your
 solution.
 
 > newtonAppr :: (Fractional a, Ord a) => a -> a -> a -> a
-> newtonAppr n g e = if (abs (n - g*g))<e then g else newtonAppr n ((g+(n/g))/2) e
+> newtonAppr n g e = if (abs (n - g*g))<e then g else (newtonAppr n ((g+(n/g))/2) e)
 
 Problem 7: 
 
@@ -185,7 +185,9 @@ What are your assumptions?  Can you predict the most general type of flatten?
 
 Answer 7:
    
-    > flatten :: Tree t -> [t]
+> flatten :: Tree t -> [t]
+> flatten Nil = []
+> flatten (Node a (Tree b) (Tree c)) = (flatten b) + [a] + (flatten c)
 
 Problem 8:
 The harmonic series is the following infinite series:
