@@ -141,8 +141,8 @@ Problem 6 Answer:
 Note: you may have a slightly different type depending on your
 solution.
 
-   > newtonAppr :: (Fractional a, Ord a) => a -> a -> a -> a
-
+> newtonAppr :: (Fractional a, Ord a) => a -> a -> a -> a
+> newtonAppr n g e = if (abs (n - g*g))<e then g else newtonAppr n ((g+(n/g))/2) e
 
 Problem 7: 
 
