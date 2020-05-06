@@ -65,7 +65,7 @@ recurse and build a new list from lst with v inserted.
 
 Problem 3 Answer:
 
-> insertAt :: (Eq a, Num a) => b -> a -> [b] -> [b]
+> insertAt :: (Ord a, Eq a, Num a) => b -> a -> [b] -> [b]
 > insertAt v p lst 
 >    | p < 0            = error "neg p"
 >    | p == 0           = v : lst
