@@ -110,6 +110,12 @@ Example:
 
 Problem 5 Answer:
 
+> ack :: (Num a) => a -> a -> a
+> ack m n
+>    | m == 0           = (n + 1)
+>    | n == 0 && m > 0  = (ack (m-1) 1)
+>    | otherwise        = (ack (m-1) (ack m (n-1)))
+
 Problem 6: 
 Implement Newton's method for calculating the square root of N.
 Your definition should use primitive recursive style.
