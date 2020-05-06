@@ -259,7 +259,10 @@ Example:
 Problem 9 Answer:
 Note: you may have a slightly different type depending on your solution.
 
-   > thue :: (Eq a, Num a, Num a1) => [a] -> [a1]
+> thue :: (Eq a, Num a, Num a1) => [a] -> [a1]
+> thue n
+>    | length n == 0  = []
+>    | otherwise      = (1 - head n) : thue (tail n)
 
 Problem 10:
 Define a function replicate' which given a list of numbers returns a 
