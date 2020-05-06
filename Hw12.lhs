@@ -79,6 +79,6 @@ The question itself: what is the data type name? What is the constructor name? W
 	
 b) Write a function "inside r point" which returns true if the point lies inside the circle centered on the origin with radius r.
 
-> inside :: (Num a, Ord b) => a -> Point b -> Bool
+> inside :: (Ord a, Num a) => a -> Point a -> Bool
 > inside r (Pt x y) = (x * x) + (y * y) <= (r * r)
 
